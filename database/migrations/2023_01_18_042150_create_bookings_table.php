@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('booking', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id('id');
             $table->integer('booking_number');
-            $table->string('customer_name');
-            $table->string('customer_email');
+            $table->string('booking_name');
+            $table->string('booking_email');
+            $table->string('booking_phone');
             $table->date('check_in_date');
             $table->date('check_out_date');
-            $table->string('guest_name');
             $table->integer('total_room');
-            $table->foreignId('id_type_room');
-            $table->enum('booking_status', ['baru', 'check_in', 'check_out']);
-            $table->foreignId('id_user');
+            $table->foreignId('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
+            $table->enum('booking_status', ['requested', 'approved', 'check_in', 'check_out', 'cancelled']);
+            $table->foreignId('user_id')->nullable()->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking');
+        Schema::dropIfExists('bookings');
     }
 };

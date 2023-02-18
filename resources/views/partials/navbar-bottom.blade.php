@@ -1,12 +1,12 @@
 <div class="sticky top-0 z-20 bg-white header__bottom drop-shadow-lg">
     <div class="container px-32">
         <nav class="flex justify-between px-5 align-items-center">
-            <a class="text-[1.5rem]" href="">
+            <a class="text-[1.5rem]" href="/hotel">
                 <img class="max-h-24" src="/assets/image/logo_telkom_indonesia.png" alt="">
             </a>
             <div class="flex flex-row-reverse w-full">
                 <div class="pl-[3rem] flex items-center">
-                    <a href="/book-online" class="">
+                    <a href="/hotel/type-room" class="">
                         <div
                             class="bg-[#ab8a62] hover:bg-[#c0a789] rounded-md h-9 flex justify-center items-center text-white">
                             <svg class="w-3 ml-4 mr-2 fill-white" xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +27,10 @@
                         <a href="">UPDATES</a>
                     </li>
                     <li class="my-auto ml-8">
-                        <a href="">FAQS</a>
+                        <a href="/hotel/receptionist">FAQS</a>
                     </li>
                     <li class="my-auto ml-8">
-                        <a href="/">HOME</a>
+                        <a href="/hotel">HOME</a>
                     </li>
                 </ul>
 

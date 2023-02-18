@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Beds extends Model
+class Bed extends Model
 {
     use HasFactory;
+
     protected $guarded = ['id'];
 
-    public function Room_Beds()
+    public function roomTypes()
     {
-        return $this->hasMany(Room_Beds::class);
+        return $this->belongsToMany(RoomType::class, 'room_bed');
     }
 }

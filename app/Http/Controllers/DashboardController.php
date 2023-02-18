@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room_Beds;
-use App\Models\Amenities;
-use App\Models\Room_Type;
+use App\Models\Room;
 use Illuminate\Http\Request;
-use App\Models\Room_Amenities;
 
-class typeRoomController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,15 @@ class typeRoomController extends Controller
      */
     public function index()
     {
-        return view('pages.guest.room_type', [
-            'type_rooms' => Room_Type::All(),
+        return view('pages.admin.receptionist.dashboard.index', [
+            'rooms' => Room::all(),
+        ]);
+    }
+
+    public function bookRoom()
+    {
+        return view('pages.receptionist.book_room', [
+            'rooms' => Room::all(),
         ]);
     }
 
@@ -49,25 +53,9 @@ class typeRoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Room_Type $room_type)
+    public function show($id)
     {
-
-        $room_amenities = Room_Amenities::All();
-        $filtered = $room_amenities->where('id_room_type', $room_type->id);
-        $room_amenities = $filtered->all();
-
-        $room_beds = Room_Beds::All();
-        $filtered = $room_beds->where('id_room_type', $room_type->id);
-        $room_beds = $filtered->all();
-
-        return view('pages.guest.room_type_detail', [
-
-            'room_type' => $room_type,
-            'room_amenities' => $room_amenities,
-            'room_beds' => $room_beds,
-            'amenities' => Amenities::all(),
-
-        ]);
+        //
     }
 
     /**

@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('room_complements', function (Blueprint $table) {
-            $table->id();
+        Schema::create('rooms', function (Blueprint $table) {
+            $table->id('id');
+            $table->string('room_number');
+            $table->foreignId('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
+            $table->enum('status', ["available", "full"]);
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('room_complements');
+        Schema::dropIfExists('rooms');
     }
 };
