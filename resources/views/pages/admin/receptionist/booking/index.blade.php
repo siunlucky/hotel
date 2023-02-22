@@ -686,7 +686,7 @@
                                 \Carbon\Carbon::parse($booking->check_in_date)->diffInDays($booking->check_out_date);
                                 }}.00
                             </span>
-                            <span class="font-medium">
+                            <span class="font-medium text-green-500">
                                 $0.00
                             </span>
                         </div>

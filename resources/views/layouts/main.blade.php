@@ -14,16 +14,12 @@
 
 <body>
     @include('.partials.navbar')
-
     <main class="main-wrapper">
         @include('.partials.navbar-bottom')
         @yield('pages')
     </main>
-
     @include('.partials.footer')
-
     @livewireScripts
 </body>
-
 
 </html>

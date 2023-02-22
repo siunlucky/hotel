@@ -13,16 +13,18 @@
                         Type</label>
                     <select type="text"
                         class="block w-full px-5 placeholder:text-[16px] text-[16px] py-3 mt-1 bg-white border rounded-md shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1">
-                        <option value="">Select One</option>
-                        <option value="">Adam Room</option>
-                        <option value="">Luxury Room</option>
+                        <option class="hidden">Select One</option>
+                        @foreach ($room_types as $room_type)
+                        <option class="text-[16px] py-2" value="{{ $room_type->id }}">{{ $room_type->name }}</option>
+                        @endforeach
+
                     </select>
                 </div>
                 <div class="flex flex-col col-span-3">
-                    <label for="check_in_and_check_out"
+                    <label for="date_range"
                         class="text-[14px] after:content-['*'] after:ml-0.5 after:text-red-500 text-slate-700 font-medium">Check
                         In - Check Out Data</label>
-                    <input type="text" placeholder="Select Date"
+                    <input type="text" placeholder="Select Date" id="date_range" name="date_range"
                         class="block w-full placeholder:text-[16px] text-[16px] px-5 py-3 mt-1 bg-white border rounded-md shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1">
                 </div>
                 <div class="flex flex-col col-span-3">
@@ -50,4 +52,29 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    flatpickr("#date_range", {
+        mode: "range",
+        // Disable all dates before today
+        minDate: "today",
+        // Disable the end date if it is the same as the start date
+        disable: [
+            function(date) {
+                return (date <= this.selectedDates);
+            }
+        ],
+        // Restrict the end date to be at least one day after the start date
+        onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length > 1) {
+                var diff = Math.floor((selectedDates[1] - selectedDates[0]) / (1000 * 60 * 60 * 24));
+                if (diff < 1) {
+                    instance.setDate(selectedDates[0].fp_incr(1), false);
+                }
+            }
+        }
+    });
+</script>
 @endsection

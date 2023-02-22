@@ -20,7 +20,7 @@
                 <a href="#" class="text-xl font-bold flex items-center lg:ml-2.5">
                     <img src="https://demo.themesberg.com/windster/images/logo.svg" class="h-6 mr-2"
                         alt="Windster Logo">
-                    <span class="self-center whitespace-nowrap">Windster</span>
+                    <span class="self-center whitespace-nowrap">Hotel</span>
                 </a>
             </div>
             <div class="flex items-center">
@@ -33,26 +33,33 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <div class="items-center hidden lg:flex">
-                    <span class="mr-5 text-base font-normal text-gray-500">Open source ❤️</span>
-                    <div class="-mb-1">
-                        <a class="github-button" href="#"
-                            data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
-                            data-size="large" data-show-count="true"
-                            aria-label="Star themesberg/windster-tailwind-css-dashboard on GitHub">Star</a>
+                <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+                    data-dropdown-placement="bottom-start"
+                    class="object-cover object-center w-10 h-10 rounded-full cursor-pointer"
+                    src="/assets/image/default-profile.png" alt="User dropdown">
+
+                <!-- Dropdown menu -->
+                <div id="userDropdown"
+                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-fit dark:bg-gray-700 dark:divide-gray-600">
+                    <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                        <div>{{ auth()->user()->name }}</div>
+                        <div class="font-medium truncate">{{ auth()->user()->email }}</div>
                     </div>
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                        <li>
+                            <a href="/hotel/receptionist/profile"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
+                        </li>
+                        <li>
+                            <a href="/hotel/receptionist/changePassword"
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Password</a>
+                        </li>
+                        <li>
+                            <a href="/hotel/auth/logout"
+                                class="block px-4 py-2 text-red-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                        </li>
+                    </ul>
                 </div>
-                <a href="#"
-                    class="hidden sm:inline-flex ml-5 text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3">
-                    <svg class="w-4 h-4 mr-2 -ml-1 svg-inline--fa fa-gem" aria-hidden="true" focusable="false"
-                        data-prefix="fas" data-icon="gem" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512">
-                        <path fill="currentColor"
-                            d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z">
-                        </path>
-                    </svg>
-                    Upgrade to Pro
-                </a>
             </div>
         </div>
     </div>

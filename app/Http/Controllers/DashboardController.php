@@ -19,13 +19,6 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function bookRoom()
-    {
-        return view('pages.receptionist.book_room', [
-            'rooms' => Room::all(),
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

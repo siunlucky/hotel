@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use Carbon\Carbon;
 use App\Models\Bed;
 use App\Models\Room;
+use App\Models\User;
 use App\Models\Amenity;
 use App\Models\Booking;
 use App\Models\RoomBed;
@@ -449,6 +450,24 @@ class DatabaseSeeder extends Seeder
             'room_id' => '1',
             'access_date' => now(),
             'price' => '100'
+        ]);
+
+        User::create([
+            'name' => 'admin',
+            'username' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin'),
+            'photo' => 'default-profile.png',
+            'role' => 'admin'
+        ]);
+
+        User::create([
+            'name' => 'receptionist',
+            'username' => 'receptionist',
+            'email' => 'receptionist@gmail.com',
+            'password' => bcrypt('receptionist'),
+            'photo' => 'default-profile.png',
+            'role' => 'receptionist'
         ]);
     }
 }

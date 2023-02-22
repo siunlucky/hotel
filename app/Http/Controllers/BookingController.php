@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\RoomType;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -83,7 +84,10 @@ class BookingController extends Controller
 
     public function create()
     {
-        return view('pages.admin.receptionist.booking.create', []);
+        $room_types = RoomType::All();
+        return view('pages.admin.receptionist.booking.create', [
+            'room_types' => $room_types,
+        ]);
     }
 
     /**
