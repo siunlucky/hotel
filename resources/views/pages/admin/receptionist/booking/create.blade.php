@@ -3,7 +3,7 @@
 @section('pages')
 <div class="h-auto px-4 pt-6">
     <h1 class="text-[20px] text-[#34495e] font-semibold pb-5">Book Room</h1>
-    <div class="p-4 bg-white ">
+    <div class="p-4 bg-white rounded-md">
         <form action="">
             @csrf
             <div class="grid grid-cols-11 gap-4">
@@ -50,6 +50,61 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div class="grid grid-cols-3 pt-5 gap-7">
+        <div class="col-span-2 bg-white rounded-md">
+            <h1 class="py-3 px-4 text-[19px] border-b font-semibold">Booking Information</h1>
+            <div class="p-4">
+                <div class="flex items-center">
+                    <div class="w-4 h-4 mr-1 bg-[#EA5455] rounded-full"></div>
+                    <span class="mr-3">Booked</span>
+                    <div class="w-4 h-4 mr-1 bg-[#28C76F] rounded-full"></div>
+                    <span class="mr-3">Selected</span>
+                    <div class="w-4 h-4 mr-1 bg-[#4634FF] rounded-full"></div>
+                    <span class="mr-3">Available</span>
+                </div>
+                <table class="w-full table-auto min-w-max">
+                    <thead>
+                        <tr class="text-xs leading-normal text-gray-600 uppercase bg-gray-200">
+                            <th class="px-6 py-3 text-left w-52">Date</th>
+                            <th class="px-6 py-3 text-right">Room</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm font-light text-gray-600">
+                        <tr class="border border-gray-200 hover:bg-gray-100">
+                            <td class="px-6 py-3 text-center border">
+                                <span class="font-semibold">
+                                    15, June 2005
+                                </span>
+                            </td>
+                            <td class="px-6 py-3 text-left whitespace-normal border">
+                                <div class="flex flex-col">
+                                    <span class="font-bold">
+                                        lasla
+                                    </span>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border border-gray-200 hover:bg-gray-100">
+                            <td class="px-6 py-3 text-center border">
+                                <span class="font-semibold">
+                                    15, June 2005
+                                </span>
+                            </td>
+                            <td class="px-6 py-3 text-left whitespace-normal border">
+                                <div class="flex flex-col">
+                                    <span class="font-bold">
+                                        lasla
+                                    </span>
+
+                                </div>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-span-1 bg-white rounded-md">2</div>
     </div>
 </div>
 @endsection

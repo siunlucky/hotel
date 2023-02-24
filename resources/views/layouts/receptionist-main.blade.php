@@ -22,7 +22,7 @@
         <div class="flex pt-16 overflow-hidden bg-white">
             @include('partials.sidebar')
             <div class="fixed inset-0 z-10 hidden bg-gray-900 opacity-50" id="sidebarBackdrop"></div>
-            <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64">
+            <div id="main-content" class="relative w-full h-full overflow-y-auto bg-[#F3F3F9] lg:ml-64">
                 <main>
                     @yield('pages')
                 </main>
