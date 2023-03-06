@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -14,9 +15,18 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.receptionist.dashboard.index', [
-            'rooms' => Room::all(),
-        ]);
+        $user = Auth::user();
+        if ($user->role == 'admin') {
+            return view('pages.admin.admin.dashboard.index', [
+                'rooms' => Room::all(),
+            ]);
+        } else if ($user->role == 'receptionist') {
+            return view('pages.admin.receptionist.dashboard.index', [
+                'rooms' => Room::all(),
+            ]);
+        } else {
+            return redirect()->back()->with('error', 'Invalid user role.');
+        }
     }
 
     /**

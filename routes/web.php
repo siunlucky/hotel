@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ChangePasswordController;
 
 
 /*
@@ -40,10 +41,19 @@ Route::group(['prefix' => 'hotel'], function () {
 
         Route::get('/booking-requests', [BookingController::class, 'request']);
         Route::get('/booking/approved', [BookingController::class, 'approved']);
-        Route::get('/booking/cancelled-bookings', [BookingController::class, 'cancelled']);
+        Route::get('/booking/cancelled-bookings', [BookingController::class, 'canceled']);
         Route::get('/booking/checked-out-booking', [BookingController::class, 'checkedOut']);
         Route::get('/booking/all-bookings', [BookingController::class, 'allBookings']);
+        Route::get('/booking/booking-detail/{booking:id}', [BookingController::class, 'show']);
+
         Route::get('/book-room', [BookingController::class, 'create']);
+        Route::get('/book-room/store', [BookingController::class, 'store']);
+
+        Route::get('/booking/approving/{booking:id}', [BookingController::class, 'approving']);
+        Route::get('/booking/check-in/{booking:id}', [BookingController::class, 'checkIn']);
+        Route::get('/booking/check-out/{booking:id}', [BookingController::class, 'checkOut']);
+        Route::get('/booking/canceling/{booking:id}', [BookingController::class, 'canceling']);
+
 
         Route::get('/profile', [ProfileController::class, 'index']);
         Route::post('/profile/{user:id}/update', [ProfileController::class, 'update']);
@@ -52,15 +62,26 @@ Route::group(['prefix' => 'hotel'], function () {
         Route::post('/changePassword/{user:id}/update', [ChangePasswordController::class, 'update']);
     });
 
-    Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index']);
         Route::get('/booking-requests', [BookingController::class, 'request']);
         Route::get('/booking/approved', [BookingController::class, 'approved']);
-        Route::get('/booking/cancelled-bookings', [BookingController::class, 'cancelled']);
+        Route::get('/booking/cancelled-bookings', [BookingController::class, 'canceled']);
         Route::get('/booking/checked-out-booking', [BookingController::class, 'checkedOut']);
         Route::get('/booking/all-bookings', [BookingController::class, 'allBookings']);
+        Route::get('/booking/booking-detail/{booking:id}', [BookingController::class, 'show']);
+
 
         Route::get('/book-room', [BookingController::class, 'create']);
+        Route::get('/book-room/store', [BookingController::class, 'store']);
+
+        Route::get('/booking/approving/{booking:id}', [BookingController::class, 'approving']);
+        Route::get('/booking/check-in/{booking:id}', [BookingController::class, 'checkIn']);
+        Route::get('/booking/check-out/{booking:id}', [BookingController::class, 'checkOut']);
+        Route::get('/booking/canceling/{booking:id}', [BookingController::class, 'canceling']);
+
+        Route::get('/receptionist', [UserController::class, 'index']);
+        Route::post('/receptionist/store', [UserController::class, 'store']);
 
         Route::get('/profile', [ProfileController::class, 'index']);
         Route::get('/password', [PasswordController::class, 'index']);

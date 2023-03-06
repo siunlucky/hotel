@@ -135,7 +135,7 @@
                     </td>
 
                     <td class="flex items-center justify-end px-6 py-3">
-                        <a href="/hotel/receptionist/booking/approving/{{ $booking->id }}}">
+                        <a href="/hotel/{{ auth()->user()->role }}/booking/approving/{{ $booking->id }}}">
                             <button
                                 class="flex items-center px-3 py-2 mr-2 font-medium text-green-400 border border-green-400 rounded hover:bg-green-500 hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 ml-0.5 mr-[13px]" fill="currentColor"
@@ -150,7 +150,7 @@
                             </button>
                         </a>
 
-                        <a href="/hotel/receptionist/booking/canceling/{{ $booking->id }}">
+                        <a href="/hotel/{{ auth()->user()->role }}/booking/canceling/{{ $booking->id }}">
                             <button
                                 class="flex items-center px-3 py-2 font-medium text-red-500 border border-red-500 rounded hover:bg-red-600 hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
@@ -246,7 +246,7 @@
                         }}.00
                     </td>
                     <td class="flex flex-col float-right px-6 py-3">
-                        <a href="/hotel/receptionist/booking/booking-detail/{{ $booking->id }}">
+                        <a href="/hotel/{{ auth()->user()->role }}/booking/booking-detail/{{ $booking->id }}">
                             <button
                                 class="flex items-center px-2 py-1 font-medium text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[5px] ml-0.5 mr-[13px]"
@@ -310,7 +310,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/hotel/receptionist/booking/check-out/{{ $booking->id }}"
+                                        <a href="/hotel/{{ auth()->user()->role }}/booking/check-out/{{ $booking->id }}"
                                             class="flex items-center px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 mr-3"
                                                 viewBox="0 0 512 512">
@@ -340,7 +340,7 @@
                                     </li>
                                     @else
                                     <li>
-                                        <a href="/hotel/receptionist/booking/check-in/{{ $booking->id }}"
+                                        <a href="/hotel/{{ auth()->user()->role }}/booking/check-in/{{ $booking->id }}"
                                             class="flex items-center px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="w-3 mr-3"
                                                 viewBox="0 0 512 512">
@@ -354,7 +354,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/hotel/receptionist/booking/canceling/{{ $booking->id }}"
+                                        <a href="/hotel/{{ auth()->user()->role }}/booking/canceling/{{ $booking->id }}"
                                             class="flex items-center px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                                 class="w-3 mr-3">
@@ -451,7 +451,7 @@
                         }}.00
                     </td>
                     <td class="flex flex-col float-right px-6 py-3">
-                        <a href="/hotel/receptionist/booking/booking-detail/{{ $booking->id }}">
+                        <a href="/hotel/{{ auth()->user()->role }}/booking/booking-detail/{{ $booking->id }}">
                             <button
                                 class="flex items-center px-2 py-1 font-medium text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[5px] ml-0.5 mr-[13px]"
@@ -584,7 +584,7 @@
                         }}.00
                     </td>
                     <td class="flex flex-col float-right px-6 py-3">
-                        <a href="/hotel/receptionist/booking/booking-detail/{{ $booking->id }}">
+                        <a href="/hotel/{{ auth()->user()->role }}/booking/booking-detail/{{ $booking->id }}">
                             <button
                                 class="flex items-center px-2 py-1 font-medium text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[5px] ml-0.5 mr-[13px]"
@@ -729,7 +729,7 @@
                         }}.00
                     </td>
                     <td class="flex flex-col float-right px-6 py-3">
-                        <a href="/hotel/receptionist/booking/booking-detail/{{ $booking->id }}">
+                        <a href="/hotel/{{ auth()->user()->role }}/booking/booking-detail/{{ $booking->id }}">
                             <button
                                 class="flex items-center px-2 py-1 font-medium text-indigo-600 border border-indigo-600 rounded hover:bg-indigo-600 hover:text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-[5px] ml-0.5 mr-[13px]"

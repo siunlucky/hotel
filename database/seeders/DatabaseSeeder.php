@@ -360,7 +360,7 @@ class DatabaseSeeder extends Seeder
 
         BookingDetail::create([
             'booking_id' => '1',
-            'room_id' => '4',
+            'room_id' => '1',
             'access_date' => now(),
             'price' => '52'
         ]);
@@ -370,7 +370,7 @@ class DatabaseSeeder extends Seeder
             'booking_name' => 'Lala Charman',
             'booking_email' => 'lalachar2@gmail.com',
             'booking_phone' => '081358273422',
-            'check_in_date' => Carbon::today()->addDays(10),
+            'check_in_date' => Carbon::today()->addDays(7),
             'check_out_date' => Carbon::today()->addDays(12),
             'total_room' => '2',
             'room_type_id' => '2',
@@ -380,14 +380,14 @@ class DatabaseSeeder extends Seeder
 
         BookingDetail::create([
             'booking_id' => '2',
-            'room_id' => '4',
+            'room_id' => '5',
             'access_date' => now(),
             'price' => '100'
         ]);
 
         BookingDetail::create([
             'booking_id' => '2',
-            'room_id' => '1',
+            'room_id' => '6',
             'access_date' => now(),
             'price' => '100'
         ]);
@@ -397,7 +397,7 @@ class DatabaseSeeder extends Seeder
             'booking_name' => 'Sigma Male',
             'booking_email' => 'sigmamale@gmail.com',
             'booking_phone' => '081358273422',
-            'check_in_date' => Carbon::today()->addDays(10),
+            'check_in_date' => Carbon::today()->addDays(7),
             'check_out_date' => Carbon::today()->addDays(12),
             'total_room' => '1',
             'room_type_id' => '1',
@@ -417,7 +417,7 @@ class DatabaseSeeder extends Seeder
             'booking_name' => 'Sigma Female',
             'booking_email' => 'sigmafemale@gmail.com',
             'booking_phone' => '081358273422',
-            'check_in_date' => Carbon::today()->addDays(10),
+            'check_in_date' => Carbon::today()->addDays(7),
             'check_out_date' => Carbon::today()->addDays(12),
             'total_room' => '1',
             'room_type_id' => '4',
@@ -427,7 +427,7 @@ class DatabaseSeeder extends Seeder
 
         BookingDetail::create([
             'booking_id' => '4',
-            'room_id' => '2',
+            'room_id' => '12',
             'access_date' => now(),
             'price' => '100'
         ]);
@@ -437,7 +437,7 @@ class DatabaseSeeder extends Seeder
             'booking_name' => 'Yeye Ichy',
             'booking_email' => 'yeyeichy1@gmail.com',
             'booking_phone' => '081358273422',
-            'check_in_date' => Carbon::today()->addDays(10),
+            'check_in_date' => Carbon::today()->addDays(7),
             'check_out_date' => Carbon::today()->addDays(12),
             'total_room' => '1',
             'room_type_id' => '2',
@@ -447,7 +447,7 @@ class DatabaseSeeder extends Seeder
 
         BookingDetail::create([
             'booking_id' => '5',
-            'room_id' => '1',
+            'room_id' => '7',
             'access_date' => now(),
             'price' => '100'
         ]);

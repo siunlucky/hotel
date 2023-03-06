@@ -13,8 +13,14 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication was successful...
-
-            return redirect()->intended('/hotel/receptionist/dashboard');
+            $user = Auth::user();
+            if ($user->role == 'admin') {
+                return redirect()->intended('/hotel/admin/dashboard');
+            } else if ($user->role == 'receptionist') {
+                return redirect()->intended('/hotel/receptionist/dashboard');
+            } else {
+                return redirect()->back()->with('error', 'Invalid user role.');
+            }
         }
 
         // Authentication failed...

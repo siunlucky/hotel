@@ -57,7 +57,7 @@
         </form>
     </div>
     @if (isset($dateRange))
-    <form action="/hotel/receptionist/book-room/store">
+    <form action="/hotel/{{ auth()->user()->role }}/book-room/store">
         @csrf
         <input type="hidden" name="date_range" value="{{ $dateRange }}">
         <input type="hidden" name="total_room" value="{{ $manyRooms }}">

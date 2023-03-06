@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('id');
             $table->foreignId('booking_id')->references('id')->on('bookings')->onDelete('cascade');
             $table->foreignId('room_id')->references('id')->on('rooms')->onDelete('cascade');
-            $table->date('access_date');
+            $table->date('access_date')->nullable();
             $table->integer('price');
             $table->timestamps();
         });

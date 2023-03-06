@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login</title>
     @vite(['resources/css/app.css' , 'resources/js/app.js'])
 </head>
 
 <body>
+    @if (session('error'))
+    <div class="toast toast-top toast-end">
+        <div class="alert alert-success">
+            <div>
+                <span>{{ session('error') }}</span>
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="flex flex-col justify-center min-h-screen bg-gray-100 sm:py-12">
         <div class="p-10 mx-auto xs:p-0 md:w-full md:max-w-md">
+
             <h1 class="mb-5 text-2xl font-bold text-center">Hotel Admin Login</h1>
             <div class="w-full bg-white divide-y divide-gray-200 rounded-lg shadow">
                 <form action="/hotel/auth/login" method="POST">

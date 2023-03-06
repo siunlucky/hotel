@@ -76,7 +76,7 @@
                             <div class="mb-7">
                                 <label class="font-semibold" for="total_room">Rooms</label>
                                 <div class="relative pt-2">
-                                    <input name="total_room" type="number"
+                                    <input name="total_room" min="1" type="number"
                                         class="block z-0 placeholder:text-slate-400 placeholder:text-[16px] text-[16px] w-full p-3 pl-7 text-sm text-gray-900 bg-white border border-[#e5e5e5] rounded-lg focus:ring-[#AB8A62] focus:border-[#AB8A62] focus:drop-shadow-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Numbers of Rooms">
                                 </div>

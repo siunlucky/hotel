@@ -20,6 +20,6 @@ class ReceptionistMiddleware
             return $next($request);
         }
 
-        return redirect()->route('login');
+        return redirect()->route('login')->with('error', 'You need to login first!');
     }
 }
