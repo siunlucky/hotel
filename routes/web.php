@@ -2,13 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AmenityController;
+use App\Http\Controllers\BedTypeController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ComplementController;
 use App\Http\Controllers\ChangePasswordController;
 
 
@@ -81,7 +85,28 @@ Route::group(['prefix' => 'hotel'], function () {
         Route::get('/booking/canceling/{booking:id}', [BookingController::class, 'canceling']);
 
         Route::get('/receptionist', [UserController::class, 'index']);
-        Route::post('/receptionist/store', [UserController::class, 'store']);
+        Route::post('/receptionist/store', [UserController::class, 'create']);
+        Route::post('/receptionist/{user:id}/edit', [UserController::class, 'edit']);
+        Route::delete('/receptionist/{user:id}/delete', [UserController::class, 'destroy']);
+
+        Route::get('/amenities', [AmenityController::class, 'index']);
+        Route::post('/amenities/store', [AmenityController::class, 'create']);
+        Route::post('/amenities/{amenity:id}/edit', [AmenityController::class, 'edit']);
+        Route::delete('/amenities/{amenity:id}/delete', [AmenityController::class, 'destroy']);
+
+        Route::get('/complements', [ComplementController::class, 'index']);
+        Route::post('/complements/store', [ComplementController::class, 'create']);
+        Route::post('/complements/{complement:id}/edit', [ComplementController::class, 'edit']);
+        Route::delete('/complements/{complement:id}/delete', [ComplementController::class, 'destroy']);
+
+        Route::get('/bed-list', [BedTypeController::class, 'index']);
+        Route::post('/bed/store', [BedTypeController::class, 'create']);
+        Route::post('/bed/{bed:id}/edit', [BedTypeController::class, 'edit']);
+        Route::delete('/bed/{bed:id}/delete', [BedTypeController::class, 'destroy']);
+
+        Route::get('/rooms', [RoomController::class, 'index']);
+
+        Route::get('/room-types', [RoomTypeController::class, 'index']);
 
         Route::get('/profile', [ProfileController::class, 'index']);
         Route::get('/password', [PasswordController::class, 'index']);

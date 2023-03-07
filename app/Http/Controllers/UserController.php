@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Booking;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -16,21 +17,29 @@ class UserController extends Controller
         return view('pages.admin.admin.receptionist.index', compact('receptionists'));
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'username' => 'required',
             'email' => 'required|email',
             'password' => 'required',
-            'photo' => 'required|image|mimes:png,jpg,jpeg',
+            'photo' => 'required|image|mimes:jpg,png,jpeg',
         ]);
 
         if ($validator->fails()) {
-            return back()->with('errors', $validator->errors());
+            return back()->withErrors($validator->errors());
         }
 
-        $request->photo->store('profilePhoto', 'public');
+        // Get the uploaded file
+        $file = $request['photo'];
+
+        // Generate a unique, hashed filename for the image
+        $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
+
+        // Store the file in the "PhotoProfile" folder
+        $path = Storage::disk('public')->putFileAs('profilePhoto', $file, $filename);
+
 
         $user = new User();
 
@@ -39,9 +48,57 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->role = 'receptionist';
-        $user->photo = $request->photo->hashName();
+        $user->photo = $filename;
 
         $user->save();
+
+        return back();
+    }
+
+    public function edit(Request $request, User $user)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required|email',
+            'password' => '',
+            'photo' => 'nullable|image|mimes:jpg,png,jpeg',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = ($request->password) ? bcrypt($request->password) : $user->password;
+
+        if ($request->hasFile('photo')) {
+            // Remove the old photo if it exists
+            Storage::disk('public')->delete('profilePhoto/' . $user->photo);
+
+            $file = $request['photo'];
+
+            // Generate a unique, hashed filename for the image
+            $filename = Str::random(40) . '.' . $file->getClientOriginalExtension();
+
+            // Store the file in the "PhotoProfile" folder
+            $path = Storage::disk('public')->putFileAs('profilePhoto', $file, $filename);
+            $user->photo = $filename;
+        }
+
+        $user->save();
+
+        return back();
+    }
+
+    public function destroy(User $user)
+    {
+        if ($user->photo) {
+            Storage::delete('profilePhoto/' . $user->photo);
+        }
+        $user->delete();
 
         return back();
     }

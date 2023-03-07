@@ -16,7 +16,7 @@
 
 <body>
     <div>
-        @include('partials.navbar- ')
+        @include('partials.navbar-admin')
         <div class="flex pt-16 overflow-hidden bg-white">
             @include('partials.sidebar')
             <div class="fixed inset-0 z-10 hidden bg-gray-900 opacity-50" id="sidebarBackdrop"></div>

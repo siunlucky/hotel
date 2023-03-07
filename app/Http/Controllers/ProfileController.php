@@ -9,7 +9,11 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.receptionist.profile.update', []);
+        if (auth()->user()->role == 'receptionist') {
+            return view('pages.admin.receptionist.profile.update');
+        } elseif (auth()->user()->role == 'admin') {
+            return view('pages.admin.admin.profile.update');
+        }
     }
 
     public function update(Request $request, User $user)
