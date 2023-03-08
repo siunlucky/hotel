@@ -8,10 +8,26 @@
     <title></title>
     @vite(['resources/css/app.css' , 'resources/js/app.js'])
     @livewireStyles
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
-    <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('assets/jQuery/js/jquery-3.6.3.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{  asset('assets/css/select2.css')  }}">
+
+    {{-- INCLUDING DATEPICKER --}}
+    <link rel="stylesheet" href="{{ asset('assets/datepicker/css/datepicker.css') }}" rel="stylesheet">
+    <script src="{{ asset('assets/datepicker/js/datepicker.min.js') }}"></script>
+
+    {{-- INCLUDING FLATPICKR --}}
     <link rel="stylesheet" href="{{ asset('assets/flatpickr/css/flatpickr.min.css') }}">
     <script src="{{ asset('assets/flatpickr/js/flatpickr.js') }}"></script>
+
+    {{-- INCLUDING SELECT2 --}}
+    <link rel="stylesheet" href="{{ asset('assets/select2/css/select2.min.css') }}">
+    <script src="{{ asset('assets/select2/js/select2.min.js') }}"></script>
+
+
+    @yield('styles')
+
 </head>
 
 <body>

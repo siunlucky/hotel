@@ -106,7 +106,8 @@ Route::group(['prefix' => 'hotel'], function () {
 
         Route::get('/rooms', [RoomController::class, 'index']);
 
-        Route::get('/room-types', [RoomTypeController::class, 'index']);
+        Route::get('/room-types', [RoomTypeController::class, 'adminIndex']);
+        Route::get('/room-types/create', [RoomTypeController::class, 'adminCreate']);
 
         Route::get('/profile', [ProfileController::class, 'index']);
         Route::get('/password', [PasswordController::class, 'index']);

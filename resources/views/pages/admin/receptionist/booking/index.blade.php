@@ -5,13 +5,14 @@
     <div class="flex justify-between">
         <h1 class="text-[20px] font-bold">{{ $table }}</h1>
         @if ($table == 'All Booking Request')
-        <form>
+        <form action="">
+            @csrf
             <div class="flex mr-5">
                 <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                     Name / Booking Number
                 </label>
                 <div class="relative w-full">
-                    <input type="search" id="search-dropdown"
+                    <input type="search" id="search-dropdown" name="search"
                         class="block w-[300px] p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                         placeholder="Name / Booking Number" required>
                     <button type="submit"
@@ -34,7 +35,7 @@
                         Name / Booking Number
                     </label>
                     <div class="relative w-full">
-                        <input type="search" id="search-dropdown"
+                        <input type="search" id="search-dropdown" name="search"
                             class="block w-[300px] p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                             placeholder="Name / Booking Number" required>
                         <button type="submit"
@@ -791,4 +792,31 @@
 
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    flatpickr("#check_in", {
+        mode: "range",
+        // Disable all dates before today
+        minDate: "today",
+        // Disable the end date if it is the same as the start date
+        disable: [
+            function(date) {
+                return (date <= this.selectedDates);
+            }
+        ],
+        dateFormat: "d/m/Y",
+        // Restrict the end date to be at least one day after the start date
+        onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length > 1) {
+                var diff = Math.floor((selectedDates[1] - selectedDates[0]) / (1000 * 60 * 60 * 24));
+                if (diff < 1) {
+                    instance.setDate(selectedDates[0].fp_incr(1), false);
+                }
+            }
+        }
+    });
+    
+</script>
 @endsection

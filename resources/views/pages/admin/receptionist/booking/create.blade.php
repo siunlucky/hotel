@@ -119,12 +119,18 @@
             <div class="col-span-1 bg-white rounded-md">
                 <h1 class="py-3 px-4 text-[19px] border-b font-semibold">Book Room</h1>
                 <div class="p-5 ">
+                    @error('booking_name')
+                    $message
+                    @enderror
                     <div class="flex flex-col col-span-3 mb-5">
                         <label for="booking_name"
                             class="text-[14px] after:content-['*'] after:ml-0.5 after:text-red-500 text-slate-700 font-medium">Name</label>
                         <input type="text" id="booking_name" name="booking_name" required
                             class="block w-full placeholder:text-[16px] text-[16px] px-5 py-3 mt-1 bg-white border rounded-md shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1">
                     </div>
+                    @error('booking_email')
+                    $message
+                    @enderror
                     <div class="flex flex-col col-span-3 mb-5">
                         <label for="booking_email"
                             class="text-[14px] after:content-['*'] after:ml-0.5 after:text-red-500 text-slate-700 font-medium">
@@ -132,6 +138,9 @@
                         <input type="email" id="booking_email" name="booking_email" required
                             class="block w-full placeholder:text-[16px] text-[16px] px-5 py-3 mt-1 bg-white border rounded-md shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1">
                     </div>
+                    @error('booking_phone')
+                    {{ $message }}
+                    @enderror
                     <div class="flex flex-col col-span-3 mb-5">
                         <label for="booking_phone"
                             class="text-[14px] after:content-['*'] after:ml-0.5 after:text-red-500 text-slate-700 font-medium">

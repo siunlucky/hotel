@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Bed;
+use App\Models\Amenity;
 use App\Models\RoomType;
+use App\Models\Complement;
 use Illuminate\Http\Request;
 
 
@@ -21,6 +24,11 @@ class RoomTypeController extends Controller
         return view('pages.room-type.index', [
             'room_types' => $room_types,
         ]);
+
+        // return view('pages.admin.admin.manage-hotel.room-types.index', [
+        //     'room_types' => $room_types,
+        // ]);
+
     }
 
     public function show(RoomType $room_type)
@@ -36,6 +44,26 @@ class RoomTypeController extends Controller
             'beds' => $beds,
             'complements' => $complements,
         ]);
+    }
+
+    public function adminIndex()
+    {
+        $room_types = RoomType::All();
+
+        return view('pages.admin.admin.manage-hotel.room-types.index', [
+            'room_types' => $room_types,
+        ]);
+    }
+
+    public function adminCreate()
+    {
+        $room_types = RoomType::All();
+        $complements = Complement::all();
+        $amenities = Amenity::all();
+        $beds = Bed::all();
+
+
+        return view('pages.admin.admin.manage-hotel.room-types.create', compact('room_types', 'complements', 'amenities', 'beds'));
     }
 
     // public function home()

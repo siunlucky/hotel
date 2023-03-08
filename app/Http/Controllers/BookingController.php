@@ -84,9 +84,17 @@ class BookingController extends Controller
         }
     }
 
-    public function allBookings()
+    public function allBookings(Request $request)
     {
-        $bookings = Booking::whereNotIn('booking_status', ['requested'])->get();
+        if ($request->search) {
+            $bookings = Booking::whereNotIn('booking_status', ['requested'])
+                ->where('booking_name', 'like', '%' . $request->search . '%')
+                ->orWhere('booking_number', 'like', '%' . $request->search . '%')
+                ->get();
+        } else {
+            $bookings = Booking::whereNotIn('booking_status', ['requested'])->get();
+        }
+
 
         if (auth()->user()->role == 'receptionist') {
             return view('pages.admin.receptionist.booking.index', [
@@ -180,7 +188,7 @@ class BookingController extends Controller
         $validator = Validator::make($request->all(), [
             'booking_name' => 'required',
             'booking_email' => 'required|email',
-            'booking_phone' => 'required|integer',
+            'booking_phone' => 'required|min:12',
             'date_range' => 'required',
             'total_room' => 'required|integer',
             'room_type' => 'required',
@@ -188,7 +196,7 @@ class BookingController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return back()->with('errors', $validator->errors);
+            return back()->withErrors($validator->errors());
         }
         $room_type_id = $request->room_type;
 
