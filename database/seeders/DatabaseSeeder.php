@@ -16,6 +16,7 @@ use App\Models\RoomType;
 use App\Models\Complement;
 use App\Models\RoomAmenity;
 use App\Models\BookingDetail;
+use App\Models\PhotoRoomType;
 use App\Models\RoomComplement;
 use Illuminate\Database\Seeder;
 
@@ -60,7 +61,7 @@ class DatabaseSeeder extends Seeder
             'price' => '100',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur optio id amet voluptas beatae modi ab corrupti repellat sequi, nobis neque cupiditate ullam sed animi maiores rerum hic nemo nam odio dolore itaque cumque molestias! Inventore delectus deleniti soluta, quasi natus at et veritatis quae atque esse? Suscipit, distinctio libero!',
             'person' => '3',
-            'photo' => 'list1.jpg'
+
         ]);
 
         RoomType::create([
@@ -68,7 +69,7 @@ class DatabaseSeeder extends Seeder
             'price' => '250',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur optio id amet voluptas beatae modi ab corrupti repellat sequi, nobis neque cupiditate ullam sed animi maiores rerum hic nemo nam odio dolore itaque cumque molestias! Inventore delectus deleniti soluta, quasi natus at et veritatis quae atque esse? Suscipit, distinctio libero!',
             'person' => '2',
-            'photo' => 'list2.jpg'
+
         ]);
 
         RoomType::create([
@@ -76,7 +77,7 @@ class DatabaseSeeder extends Seeder
             'price' => '230',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur optio id amet voluptas beatae modi ab corrupti repellat sequi, nobis neque cupiditate ullam sed animi maiores rerum hic nemo nam odio dolore itaque cumque molestias! Inventore delectus deleniti soluta, quasi natus at et veritatis quae atque esse? Suscipit, distinctio libero!',
             'person' => '3',
-            'photo' => 'list3.jpg'
+
         ]);
 
         RoomType::create([
@@ -84,7 +85,47 @@ class DatabaseSeeder extends Seeder
             'price' => '12',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur optio id amet voluptas beatae modi ab corrupti repellat sequi, nobis neque cupiditate ullam sed animi maiores rerum hic nemo nam odio dolore itaque cumque molestias! Inventore delectus deleniti soluta, quasi natus at et veritatis quae atque esse? Suscipit, distinctio libero!',
             'person' => '1',
-            'photo' => 'list4.jpg'
+
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '1',
+            'photo' => 'list1.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '1',
+            'photo' => 'list2.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '2',
+            'photo' => 'list1.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '2',
+            'photo' => 'list2.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '3',
+            'photo' => 'list1.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '3',
+            'photo' => 'list2.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '4',
+            'photo' => 'list1.jpg'
+        ]);
+
+        PhotoRoomType::create([
+            'room_type_id' => '4',
+            'photo' => 'list2.jpg'
         ]);
 
         RoomAmenity::create([
@@ -263,6 +304,8 @@ class DatabaseSeeder extends Seeder
             'room_type_id' => '4',
             'complement_id' => '6'
         ]);
+
+
 
         Room::create([
             'room_number' => "101",

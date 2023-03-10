@@ -17,9 +17,19 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function request()
+    public function request(Request $request)
     {
-        $bookings = Booking::where('booking_status', 'requested')->get();
+
+        $query = Booking::where('booking_status', 'requested');
+
+        if ($request->booking_search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('booking_name', 'like', '%' . $request->booking_search . '%')
+                    ->orWhere('booking_number', 'like', '%' . $request->booking_search . '%');
+            });
+        }
+
+        $bookings = $query->get();
 
         if (auth()->user()->role == 'receptionist') {
             return view('pages.admin.receptionist.booking.index', [
@@ -34,9 +44,23 @@ class BookingController extends Controller
         }
     }
 
-    public function approved()
+    public function approved(Request $request)
     {
-        $bookings = Booking::where('booking_status', 'approved')->orWhere('booking_status', 'check_in')->get();
+        $query = Booking::where('booking_status', 'approved')->orWhere('booking_status', 'check_in');
+
+        if ($request->booking_search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('booking_name', 'like', '%' . $request->booking_search . '%')
+                    ->orWhere('booking_number', 'like', '%' . $request->booking_search . '%');
+            });
+        }
+
+        if ($request->check_in_date) {
+            $query->where('check_in_date', '=', $request->check_in_date);
+        }
+
+        $bookings = $query->get();
+
         if (auth()->user()->role == 'receptionist') {
             return view('pages.admin.receptionist.booking.index', [
                 'bookings' => $bookings,
@@ -50,9 +74,22 @@ class BookingController extends Controller
         }
     }
 
-    public function checkedOut()
+    public function checkedOut(Request $request)
     {
-        $bookings = Booking::where('booking_status', 'check_out')->get();
+        $query = Booking::where('booking_status', ['check_out']);
+
+        if ($request->booking_search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('booking_name', 'like', '%' . $request->booking_search . '%')
+                    ->orWhere('booking_number', 'like', '%' . $request->booking_search . '%');
+            });
+        }
+
+        if ($request->check_in_date) {
+            $query->where('check_in_date', '=', $request->check_in_date);
+        }
+
+        $bookings = $query->get();
 
         if (auth()->user()->role == 'receptionist') {
             return view('pages.admin.receptionist.booking.index', [
@@ -67,9 +104,22 @@ class BookingController extends Controller
         }
     }
 
-    public function canceled()
+    public function canceled(Request $request)
     {
-        $bookings = Booking::where('booking_status', 'cancelled')->get();
+        $query = Booking::where('booking_status', ['cancelled']);
+
+        if ($request->booking_search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('booking_name', 'like', '%' . $request->booking_search . '%')
+                    ->orWhere('booking_number', 'like', '%' . $request->booking_search . '%');
+            });
+        }
+
+        if ($request->check_in_date) {
+            $query->where('check_in_date', '=', $request->check_in_date);
+        }
+
+        $bookings = $query->get();
 
         if (auth()->user()->role == 'receptionist') {
             return view('pages.admin.receptionist.booking.index', [
@@ -86,15 +136,20 @@ class BookingController extends Controller
 
     public function allBookings(Request $request)
     {
-        if ($request->search) {
-            $bookings = Booking::whereNotIn('booking_status', ['requested'])
-                ->where('booking_name', 'like', '%' . $request->search . '%')
-                ->orWhere('booking_number', 'like', '%' . $request->search . '%')
-                ->get();
-        } else {
-            $bookings = Booking::whereNotIn('booking_status', ['requested'])->get();
+        $query = Booking::whereNotIn('booking_status', ['requested']);
+
+        if ($request->booking_search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('booking_name', 'like', '%' . $request->booking_search . '%')
+                    ->orWhere('booking_number', 'like', '%' . $request->booking_search . '%');
+            });
         }
 
+        if ($request->check_in_date) {
+            $query->where('check_in_date', '=', $request->check_in_date);
+        }
+
+        $bookings = $query->get();
 
         if (auth()->user()->role == 'receptionist') {
             return view('pages.admin.receptionist.booking.index', [

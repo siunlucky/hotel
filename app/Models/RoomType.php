@@ -34,4 +34,9 @@ class RoomType extends Model
     {
         return $this->hasMany(Booking::class, 'room_type_id');
     }
+
+    public function PhotoRoomTypes()
+    {
+        return $this->hasMany(PhotoRoomType::class, 'room_type_id');
+    }
 }

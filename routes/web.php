@@ -9,6 +9,7 @@ use App\Http\Controllers\AmenityController;
 use App\Http\Controllers\BedTypeController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\DashboardController;
@@ -34,6 +35,7 @@ Route::group(['prefix' => 'hotel'], function () {
 
     Route::get('/type-room', [RoomTypeController::class, 'index']);
     Route::get('/type-room/detail/{room_type:id}', [RoomTypeController::class, 'show']);
+    Route::post('/booking/store', [RoomTypeController::class, 'store']);
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/auth/login', [AuthController::class, 'login']);
@@ -108,6 +110,9 @@ Route::group(['prefix' => 'hotel'], function () {
 
         Route::get('/room-types', [RoomTypeController::class, 'adminIndex']);
         Route::get('/room-types/create', [RoomTypeController::class, 'adminCreate']);
+        Route::get('/room-types/edit', [RoomTypeController::class, 'adminEdit']);
+        Route::post('/room-types/create/store', [RoomTypeController::class, 'adminStore']);
+        Route::delete('/room-types/delete/{room_type:id}', [RoomTypeController::class, 'adminDestroy']);
 
         Route::get('/profile', [ProfileController::class, 'index']);
         Route::get('/password', [PasswordController::class, 'index']);

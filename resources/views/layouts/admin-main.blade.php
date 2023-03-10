@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    @vite(['resources/css/app.css' , 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 
     <script src="{{ asset('assets/jQuery/js/jquery-3.6.3.min.js') }}"></script>
 
-    <link rel="stylesheet" href="{{  asset('assets/css/select2.css')  }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/select2.css') }}">
+
 
     {{-- INCLUDING DATEPICKER --}}
     <link rel="stylesheet" href="{{ asset('assets/datepicker/css/datepicker.css') }}" rel="stylesheet">
@@ -41,15 +42,14 @@
                     @yield('pages')
                 </main>
                 <p class="my-10 text-sm text-center text-gray-500">
-                    &copy; 2019-2021 <a href="#" class="hover:underline" target="_blank">Themesberg</a>. All rights
+                    &copy; 2019-2021 <a href="#" class="hover:underline" target="_blank">Themesberg</a>. All
+                    rights
                     reserved.
                 </p>
             </div>
         </div>
-        <script async defer src="https://buttons.github.io/buttons.js">
-        </script>
-        <script src="https://demo.themesberg.com/windster/app.bundle.js">
-        </script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
     </div>
     @livewireScripts
 

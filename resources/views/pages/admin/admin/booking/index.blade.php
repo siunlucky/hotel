@@ -6,12 +6,13 @@
         <h1 class="text-[20px] font-bold">{{ $table }}</h1>
         @if ($table == 'All Booking Request')
         <form>
+            @csrf
             <div class="flex mr-5">
-                <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+                <label for="booking-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                     Name / Booking Number
                 </label>
                 <div class="relative w-full">
-                    <input type="search" id="search-dropdown"
+                    <input type="text" id="booking-search" name="booking_search"
                         class="block w-[300px] p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                         placeholder="Name / Booking Number" required>
                     <button type="submit"
@@ -27,16 +28,16 @@
             </div>
         </form>
         @else
-        <div class="flex">
-            <form>
+        <form>
+            <div class="flex">
                 <div class="flex mr-5">
-                    <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+                    <label for="booking-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
                         Name / Booking Number
                     </label>
                     <div class="relative w-full">
-                        <input type="search" id="search-dropdown"
+                        <input type="text" id="booking-search" name="booking_search"
                             class="block w-[300px] p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                            placeholder="Name / Booking Number" required>
+                            placeholder="Name / Booking Number" value="{{ request('booking_search') }}">
                         <button type="submit"
                             class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor"
@@ -48,16 +49,14 @@
                         </button>
                     </div>
                 </div>
-            </form>
-            <form>
                 <div class="flex">
-                    <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
-                        Check In - Check-Out
+                    <label for="check-in-date" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+                        Check In Date
                     </label>
                     <div class="relative w-full">
-                        <input type="search" id="search-dropdown"
+                        <input type="text" id="check-in-date" name="check_in_date"
                             class="block w-[300px] p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-                            placeholder="Check In - Check Out" required>
+                            placeholder="Check In Date" value="{{ request('check_in_date') }}">
                         <button type="submit"
                             class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor"
@@ -69,8 +68,8 @@
                         </button>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
         @endif
     </div>
 
