@@ -1,0 +1,233 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    padding: 2.5rem;
+    margin: 1.25rem 5rem 1.25rem 5rem;
+}
+
+.section-container {
+    padding: 1.25rem;
+    border-width: 2px;
+    border-radius: 0.5rem;
+}
+
+.container-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    /* Equivalent to pb-2 in Tailwind */
+    border-bottom-width: 2px;
+    /* Equivalent to border-b-2 in Tailwind */
+    border-bottom-style: solid;
+}
+
+.container-1-text-1 {
+    font-size: 20px;
+    /* Equivalent to text-[20px] in Tailwind */
+    font-weight: 600;
+    /* Equivalent to font-semibold in Tailwind */
+}
+
+.container-1-text-2 {
+    font-size: 0.875rem;
+    /* Equivalent to text-sm in Tailwind */
+    font-weight: 400;
+    /* Equivalent to font-normal in Tailwind */
+}
+
+.container-1-box {
+    display: flex;
+    /* Equivalent to flex in Tailwind */
+
+}
+
+.container-1-box-card {
+    padding: 0.5rem;
+    /* Equivalent to p-2 in Tailwind */
+    padding-left: 1rem;
+    /* Equivalent to px-4 in Tailwind */
+    border-radius: 0.5rem;
+    /* Equivalent to rounded-lg in Tailwind */
+}
+
+.bg-yellow-400 {
+    background-color: #FBBF24;
+    /* Equivalent to bg-yellow-400 in Tailwind */
+}
+
+.bg-green-400 {
+    background-color: #22C55E;
+    /* Equivalent to bg-green-400 in Tailwind */
+}
+
+.bg-blue-500 {
+    background-color: #3B82F6;
+    /* Equivalent to bg-blue-500 in Tailwind */
+}
+
+.bg-gray-500 {
+    background-color: #6B7280;
+    /* Equivalent to bg-gray-500 in Tailwind */
+}
+
+.bg-red-500 {
+    background-color: #EF4444;
+    /* Equivalent to bg-red-500 in Tailwind */
+}
+
+.text-white {
+    color: #FFFFFF;
+    /* Equivalent to text-white in Tailwind */
+}
+
+.container-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Equivalent to grid-cols-2 in Tailwind */
+    margin-top: 1.25rem;
+    /* Equivalent to mt-5 in Tailwind */
+}
+
+.container-2-box-1 {
+    display: grid;
+    /* Equivalent to grid in Tailwind */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Equivalent to grid-cols-3 in Tailwind */
+    gap: 0.5rem;
+    /* Equivalent to gap-2 in Tailwind */
+}
+
+.container-2-box-1-text-1 {
+    grid-column: span 1 / span 1;
+    /* Equivalent to col-span-1 in Tailwind */
+    font-weight: 400;
+    /* Equivalent to font-normal in Tailwind */
+
+}
+
+.container-2-box-1-text-2 {
+    grid-column: span 2 / span 2;
+    /* Equivalent to col-span-2 in Tailwind */
+    font-weight: 600;
+    /* Equivalent to font-semibold in Tailwind */
+
+}
+
+.container-2-box-2 {
+    display: grid;
+    /* Equivalent to grid in Tailwind */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Equivalent to grid-cols-2 in Tailwind */
+    grid-column: span 2 / span 2;
+    /* Equivalent to col-span-2 in Tailwind */
+    gap: 0.5rem;
+    /* Equivalent to gap-2 in Tailwind */
+    padding-top: 1.25rem;
+    /* Equivalent to pt-5 in Tailwind */
+    margin-top: 1.25rem;
+    /* Equivalent to my-5 in Tailwind */
+    border-top-width: 0.125rem;
+    /* Equivalent to border-t-2 in Tailwind */
+    border-top-color: currentColor;
+    /* Equivalent to border-t-2 in Tailwind */
+    border-top-style: solid;
+    /* Equivalent to border-t-2 in Tailwind */
+}
+
+.container-2-box-2-text-1 {
+    font-size: 18px;
+    /* Equivalent to text-[18px] in Tailwind */
+    font-weight: 600;
+    /* Equivalent to font-semibold in Tailwind */
+}
+
+.container-2-box-2-text-2 {
+    font-size: 0.875rem;
+    /* Equivalent to text-sm in Tailwind */
+    font-weight: 400;
+    /* Equivalent to font-normal in Tailwind */
+}
+
+.container-2-box-3 {
+    grid-column: span 2;
+    /* Equivalent to col-span-2 in Tailwind */
+    padding-top: 1.25rem;
+    /* Equivalent to pt-5 in Tailwind */
+    border-top-width: 2px;
+    /* Equivalent to border-t-2 in Tailwind */
+
+}
+
+.container-2-box-3-text-1 {
+    font-weight: 600;
+    /* Equivalent to font-semibold in Tailwind */
+
+}
+
+.container-2-box-3-card-1 {
+    display: grid;
+    /* Equivalent to grid in Tailwind */
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    /* Equivalent to grid-cols-5 in Tailwind */
+    grid-column: span 2;
+    /* Equivalent to col-span-2 in Tailwind */
+    gap: 0.5rem;
+    /* Equivalent to gap-2 in Tailwind */
+    margin-top: 1.25rem;
+    /* Equivalent to my-5 in Tailwind */
+    margin-bottom: 1.25rem;
+    /* Equivalent to my-5 in Tailwind */
+
+}
+
+.container-2-box-3-card-1-text-1 {
+    grid-column: span 1;
+    /* Equivalent to col-span-1 in Tailwind */
+    font-weight: 400;
+    /* Equivalent to font-normal in Tailwind */
+
+}
+
+.container-2-box-3-card-1-text-2 {
+    grid-column: span 4;
+    /* Equivalent to col-span-4 in Tailwind */
+    font-weight: 600;
+    /* Equivalent to font-semibold in Tailwind */
+    text-align: right;
+    /* Equivalent to text-right in Tailwind */
+
+}
+
+.container-2-box-3-card-2 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-column: span 2;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+    border-top-width: 2px;
+
+}
+
+.container-2-box-3-card-2-text-1 {
+    grid-column: span 1;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.container-2-box-3-card-2-text-2 {
+    grid-column: span 4;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+
+
+}

@@ -35,7 +35,10 @@ Route::group(['prefix' => 'hotel'], function () {
 
     Route::get('/type-room', [RoomTypeController::class, 'index']);
     Route::get('/type-room/detail/{room_type:id}', [RoomTypeController::class, 'show']);
+
     Route::post('/booking/store', [RoomTypeController::class, 'store']);
+    Route::get('/check-booking', [BookingController::class, 'check']);
+    Route::get('/print-booking/{booking:id}', [BookingController::class, 'pdf']);
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/auth/login', [AuthController::class, 'login']);
@@ -107,11 +110,13 @@ Route::group(['prefix' => 'hotel'], function () {
         Route::delete('/bed/{bed:id}/delete', [BedTypeController::class, 'destroy']);
 
         Route::get('/rooms', [RoomController::class, 'index']);
+        Route::post('/rooms/edit/{room:id}', [RoomController::class, 'edit']);
+        Route::delete('/rooms/delete/{room:id}', [RoomController::class, 'destroy']);
 
         Route::get('/room-types', [RoomTypeController::class, 'adminIndex']);
         Route::get('/room-types/create', [RoomTypeController::class, 'adminCreate']);
-        Route::get('/room-types/edit', [RoomTypeController::class, 'adminEdit']);
         Route::post('/room-types/create/store', [RoomTypeController::class, 'adminStore']);
+        Route::get('/room-types/edit/{room_type:id}', [RoomTypeController::class, 'adminEdit']);
         Route::delete('/room-types/delete/{room_type:id}', [RoomTypeController::class, 'adminDestroy']);
 
         Route::get('/profile', [ProfileController::class, 'index']);

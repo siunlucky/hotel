@@ -5,7 +5,6 @@ module.exports = {
     "./resources/**/*.js",
     "./resources/**/*.vue",
     "./node_modules/flowbite/**/*.js"
-
   ],
   theme: {
     extend: {
@@ -14,6 +13,9 @@ module.exports = {
         'room_type': "url('../../public/assets/image/room_type2.jpg')",
       },
     },
+    fontFamily: {
+        'sans': ['Poppins', 'sans-serif'],
+      },
   },
   plugins: [
     require('flowbite/plugin'),

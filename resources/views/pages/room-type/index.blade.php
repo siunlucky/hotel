@@ -13,7 +13,7 @@
                 @foreach ($room_types as $room_type)
                     <div class="relative">
                         <div class="">
-                            <div class="h-[435px]">
+                            <div class="h-[435px] w-full">
                                 <div class="absolute">
                                     <ul class="ml-7 mt-14">
                                         @foreach ($room_type->amenities as $amenity)
@@ -84,28 +84,11 @@
                                                     <div class="tooltip-arrow" data-popper-arrow></div>
                                                 </div>
                                             @endif
-
-                                            @if ($amenity->name == 'TV')
-                                                <li data-tooltip-target="tv" data-tooltip-placement="right" type="button"
-                                                    class="bg-[#3C2912] p-3 my-2">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4"
-                                                        viewBox="0 0 640 512">
-                                                        <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                                        <path fill="#FFFFFF"
-                                                            d="M64 64V352H576V64H64zM0 64C0 28.7 28.7 0 64 0H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zM128 448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H128c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
-                                                    </svg>
-                                                </li>
-                                                <div id="tv" role="tooltip"
-                                                    class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-                                                    TV
-                                                    <div class="tooltip-arrow" data-popper-arrow></div>
-                                                </div>
-                                            @endif
                                         @endforeach
                                     </ul>
                                 </div>
                                 <img src="/storage/typeRoomPhoto/{{ $room_type->PhotoRoomTypes[0]->photo }}"
-                                    class="min-h-[350px] rounded" alt="">
+                                    class="object-cover object-center w-full h-[350px] rounded" alt="">
                             </div>
                             <div
                                 class="absolute bottom-0 mx-7 left-0 right-0 p-[1.25rem] rounded-md border-[#ab8a625d] border-2 bg-[#F4F2F0] hover:-translate-y-2 duration-500">

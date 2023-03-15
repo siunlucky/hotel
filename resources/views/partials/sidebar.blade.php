@@ -255,7 +255,7 @@
                             </form>
                         </li>
                         <li>
-                            <a href="/hotel/admin/"
+                            <a href="/hotel/admin/dashboard"
                                 class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group">
                                 <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

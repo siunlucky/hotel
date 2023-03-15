@@ -44,7 +44,7 @@
                     <tr class="text-xs leading-normal text-gray-600 uppercase bg-gray-200">
                         <th class="w-5 px-6 py-3 text-left">S.N.</th>
                         <th class="px-6 py-3 text-center">Name</th>
-                        <th class="px-6 py-3 text-center">Fare</th>
+                        <th class="px-6 py-3 text-center">Fare / Night</th>
                         <th class="px-6 py-3 text-center">Total Rooms</th>
                         <th class="px-6 py-3 text-center">Person</th>
                         <th class="px-6 py-3 w-[190px] text-right">Action</th>
@@ -69,8 +69,8 @@
                                 {{ $room_type->person }}
                             </td>
                             <td class="flex justify-around px-6 py-4 text-center whitespace-normal ">
-                                <label for="edit-{{ $room_type->id }}"
-                                    class="btn normal-case bg-white min-h-0 h-[30px] text-[#4634FF] rounded-sm border-[#4634FF] hover:font-medium border px-4 hover:bg-[#4634FF] hover:text-white font-normal">Edit</label>
+                                <a href="/hotel/admin/room-types/edit/{{ $room_type->id }}"
+                                    class="btn normal-case bg-white min-h-0 h-[30px] text-[#4634FF] rounded-sm border-[#4634FF] hover:font-medium border px-4 hover:bg-[#4634FF] hover:text-white font-normal">Edit</a>
 
                                 <form method="POST" action="/hotel/admin/room-types/delete/{{ $room_type->id }}">
                                     {{ csrf_field() }}

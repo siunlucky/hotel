@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    @vite(['resources/css/app.css' , 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <div>
         @include('partials.navbar-admin')
         <div class="flex pt-16 overflow-hidden bg-white">
@@ -27,15 +28,14 @@
                     @yield('pages')
                 </main>
                 <p class="my-10 text-sm text-center text-gray-500">
-                    &copy; 2019-2021 <a href="#" class="hover:underline" target="_blank">Themesberg</a>. All rights
+                    &copy; 2019-2021 <a href="#" class="hover:underline" target="_blank">Themesberg</a>. All
+                    rights
                     reserved.
                 </p>
             </div>
         </div>
-        <script async defer src="https://buttons.github.io/buttons.js">
-        </script>
-        <script src="https://demo.themesberg.com/windster/app.bundle.js">
-        </script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
     </div>
     @livewireScripts
 

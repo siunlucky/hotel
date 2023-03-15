@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Carbon\Carbon;
 use App\Models\Room;
 use App\Models\Booking;
 use App\Models\RoomType;
 use Illuminate\Http\Request;
 use App\Models\BookingDetail;
+use LaravelDaily\Invoices\Invoice;
+use LaravelDaily\Invoices\Classes\Buyer;
+use LaravelDaily\Invoices\Classes\Party;
 use Illuminate\Support\Facades\Validator;
+use LaravelDaily\Invoices\Classes\Seller;
+use LaravelDaily\Invoices\Classes\InvoiceItem;
 
 class BookingController extends Controller
 {
@@ -365,38 +371,85 @@ class BookingController extends Controller
             return view('pages.admin.admin.booking.show',  compact('booking', 'booking_details', 'dates'));
         }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function check(Booking $booking, Request $request)
     {
-        //
+        $search = $request->search;
+        if ($search) {
+            $booking = Booking::where('booking_number', 'LIKE', $search)->first();
+        } else {
+            $booking = [];
+        }
+
+        return view('pages.check-booking.index', compact('booking', 'search'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function invoice(Booking $booking)
     {
-        //
+
+        $data = [
+            'booking_number'    => $booking->booking_name,
+            'booking_name'    => $booking->booking_name,
+            'booking_email'         => $booking->booking_email,
+            'booking_phone'      => $booking->booking_phone,
+            'check_in_date' => $booking->check_in_date,
+            'check_out_date'        => $booking->check_out_date,
+            'total_room' => $booking->total_room,
+            'room_type' => $booking->roomType->name,
+            'booking_status' => $booking->booking_status,
+            'created_at' => $booking->created_at,
+            'rooms' => $booking->bookingDetails,
+            'price' => $booking->roomType->price
+
+        ];
+        // $pdf = PDF::loadView('pages.check-booking.invoice', $data);
+        // return $pdf->stream('invoice.pdf');
+        return view('pages.check-booking.invoice', $data);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function pdf(Booking $booking)
     {
-        //
+        $customer = new Buyer([
+            'name'          => $booking->booking_name,
+            'phone'         => $booking->booking_phone,
+            'custom_fields' => [
+                'Email' => $booking->booking_email,
+                'Booking Number' => ">> " . $booking->booking_number . " <<",
+                'Check In' => date('D, d M Y', strtotime($booking->check_in_date)),
+                'Check Out' => date('D, d M Y', strtotime($booking->check_out_date)),
+            ],
+        ]);
+
+
+        $client = new Party([
+            'name' => "HOTEL",
+            'phone' => "+62 821-4132-6576",
+            'custom_fields' => [
+                'email' => "faizelfahad2@gmail.com",
+            ],
+        ]);
+
+
+
+        foreach ($booking->bookingDetails as $detail_booking) {
+            $items[] =
+                (new InvoiceItem())
+                ->title("Room - " . $detail_booking->room->room_number)
+                ->description($booking->roomType->name)
+                ->pricePerUnit($booking->roomType->price)
+                ->units('/Night')
+                ->quantity(Carbon::parse($booking->check_in_date)->diffInDays($booking->check_out_date));
+        }
+
+        $invoice = Invoice::make()
+            ->status($booking->booking_status)
+            ->date($booking->created_at)
+            ->dateFormat('d/m/Y')
+            ->seller($client)
+            ->buyer($customer)
+            ->currencySymbol('$')
+            ->currencyCode('USD')
+            ->addItems($items);
+
+        return $invoice->stream();
     }
 }

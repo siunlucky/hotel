@@ -236,100 +236,23 @@ class RoomTypeController extends Controller
 
 
 
-        return back();
+        return redirect()->intended('/hotel/admin/room-types');
     }
 
-    public function adminEdit()
+    public function adminEdit(RoomType $room_type)
     {
-        $room_types = RoomType::All();
         $complements = Complement::all();
         $amenities = Amenity::all();
         $beds = Bed::all();
+        $photos = $room_type->PhotoRoomTypes;
 
-
-        return view('pages.admin.admin.manage-hotel.room-types.create', compact('room_types', 'complements', 'amenities', 'beds'));
+        return view('pages.admin.admin.manage-hotel.room-types.edit', compact('room_type', 'complements', 'amenities', 'beds', 'photos'));
     }
+
 
     public function adminDestroy(RoomType $room_type)
     {
         $room_type->delete();
-
         return back();
-
-
-        return back();
-    }
-
-    // public function home()
-    // {
-    //     $type_rooms = Room_Type::orderBy('updated_at', 'desc')->limit(6)->get();
-
-    //     return view('pages.guest.home', [
-    //         'type_rooms' => $type_rooms,
-    //         'room_amenities' => Room_Amenities::All(),
-    //     ]);
-    // }
-
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

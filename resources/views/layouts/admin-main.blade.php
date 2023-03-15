@@ -26,12 +26,14 @@
     <link rel="stylesheet" href="{{ asset('assets/select2/css/select2.min.css') }}">
     <script src="{{ asset('assets/select2/js/select2.min.js') }}"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
 
     @yield('styles')
 
 </head>
 
-<body>
+<body class="font-poppins">
     <div>
         @include('partials.navbar-admin')
         <div class="flex pt-16 overflow-hidden bg-white">
@@ -53,7 +55,9 @@
     </div>
     @livewireScripts
 
+
     @yield('scripts')
+
 </body>
 
 

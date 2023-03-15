@@ -25,18 +25,18 @@
                             </div>
                         </div>
                         <div class="">
-                            <img src="/storage/typeRoomPhoto/{{ $photos[0]->photo }}" class="rounded-md" alt="">
+                            <img src="/storage/typeRoomPhoto/{{ $photos[0]->photo }}" class="object-cover object-center w-full h-[400px] rounded-md" alt="">
                         </div>
                     </div>
                     <div class="px-24 mt-5">
                         <div class="grid justify-between grid-cols-3 gap-5">
                             @foreach ($photos as $photo)
-                                <img class="rounded-md h-full" src="/storage/typeRoomPhoto/{{ $photo->photo }}"
+                                <img class="h-[125px] w-full rounded-md object-cover object-center" src="/storage/typeRoomPhoto/{{ $photo->photo }}"
                                     alt="">
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-span-2 px-5 py-2 mt-5 pt-5 bg-white">
+                    <div class="col-span-2 px-5 py-2 pt-5 mt-5 bg-white">
                         <div class="border-[#efefef] border-b pb-3">
                             <h1 class="text-[23px] font-bold text-[#66625d]">Description</h1>
                         </div>
@@ -44,7 +44,7 @@
                             {{ $room_type->description }}
                         </p>
                     </div>
-                    <div class="col-span-2 px-5 py-1 mt-5 pt-5 bg-white">
+                    <div class="col-span-2 px-5 py-1 pt-5 mt-5 bg-white">
                         <div class="border-[#efefef] border-b pb-3">
                             <h1 class="text-[23px] font-bold text-[#66625d]">Amenities</h1>
                         </div>
@@ -100,7 +100,7 @@
 
                         </div>
                     </div>
-                    <div class="col-span-2 px-5 py-1 mt-5 pt-5 bg-white">
+                    <div class="col-span-2 px-5 py-1 pt-5 mt-5 bg-white">
                         <div class="border-[#efefef] border-b pb-3">
                             <h1 class="text-[23px] font-bold text-[#66625d]">Complements</h1>
                         </div>
@@ -119,7 +119,7 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="col-span-2 px-5 mt-5 py-1 pt-5 bg-white">
+                    <div class="col-span-2 px-5 py-1 pt-5 mt-5 bg-white">
                         <div class="border-[#efefef] border-b pb-3">
                             <h1 class="text-[23px] font-bold text-[#66625d]">Beds</h1>
                         </div>
@@ -274,7 +274,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <table class="w-full table-auto min-w-max mb-5">
+                                        <table class="w-full mb-5 table-auto min-w-max">
                                             <thead>
                                                 <tr class="text-xs leading-normal text-white uppercase bg-[#AB8A62]">
                                                     <th class="px-6 py-3 text-left">Date</th>

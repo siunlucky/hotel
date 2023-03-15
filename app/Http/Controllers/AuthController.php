@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Alert;
+
 
 class AuthController extends Controller
 {
@@ -15,9 +17,9 @@ class AuthController extends Controller
             // Authentication was successful...
             $user = Auth::user();
             if ($user->role == 'admin') {
-                return redirect()->intended('/hotel/admin/dashboard');
+                return redirect()->intended('/hotel/admin/dashboard')->withSuccess('Login!');
             } else if ($user->role == 'receptionist') {
-                return redirect()->intended('/hotel/receptionist/dashboard');
+                return redirect()->intended('/hotel/receptionist/dashboard')->withSuccess('Login!');
             } else {
                 return redirect()->back()->with('error', 'Invalid user role.');
             }

@@ -5,11 +5,11 @@
                 <img class="max-h-24" src="/assets/image/logo_telkom_indonesia.png" alt="">
             </a>
             <div class="flex flex-row-reverse w-full">
-                <div class="pl-[3rem] flex items-center">
+                <div class="pl-[1rem] flex items-center">
                     <a href="/hotel/type-room" class="">
                         <div
-                            class="bg-[#ab8a62] hover:bg-[#c0a789] rounded-md h-9 flex justify-center items-center text-white">
-                            <svg class="w-3 ml-4 mr-2 fill-white" xmlns="http://www.w3.org/2000/svg"
+                            class="bg-[#ab8a62] hover:bg-white hover:text-[#ab8a62] hover:fill-[#ab8a62] hover:border-[#ab8a62] border-2 border-white rounded-md fill-white h-9 flex justify-center items-center text-white">
+                            <svg class="w-3 ml-4 mr-2 " xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 448 512">
                                 <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                 <path
@@ -19,12 +19,21 @@
                         </div>
                     </a>
                 </div>
+                <div class="pl-[3rem] flex items-center">
+                    <a href="/hotel/check-booking" class="">
+                        <div
+                            class="bg-white hover:bg-[#ab8a62] hover:text-white hover:border-white rounded-md h-9 flex justify-center items-center text-[#ab8a62] border-2 border-[#ab8a62]">
+
+                            <span class="text-sm font-medium mx-4">CHECK BOOKING</span>
+                        </div>
+                    </a>
+                </div>
                 <ul class="flex flex-row-reverse h-full">
                     <li class="my-auto ml-8">
-                        <a href="">CONTACT</a>
+                        <a href="">BOOK ONLINE</a>
                     </li>
                     <li class="my-auto ml-8">
-                        <a href="">UPDATES</a>
+                        <a href="">CONTACT</a>
                     </li>
                     <li class="my-auto ml-8">
                         <a href="/hotel/receptionist">FAQS</a>
