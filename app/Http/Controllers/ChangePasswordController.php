@@ -10,7 +10,11 @@ class ChangePasswordController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.receptionist.password.update', []);
+        if (auth()->user()->role == 'receptionist') {
+            return view('pages.admin.receptionist.password.update');
+        } elseif (auth()->user()->role == 'admin') {
+            return view('pages.admin.admin.password.update');
+        }
     }
 
     public function update(Request $request, User $user)

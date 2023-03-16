@@ -36,7 +36,7 @@
                 <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
                     data-dropdown-placement="bottom-start"
                     class="object-cover object-center w-10 h-10 rounded-full cursor-pointer"
-                    src="/assets/image/default-profile.png" alt="User dropdown">
+                    src="/storage/profilePhoto/{{ auth()->user()->photo }}" alt="User dropdown">
 
                 <!-- Dropdown menu -->
                 <div id="userDropdown"
@@ -47,11 +47,11 @@
                     </div>
                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
                         <li>
-                            <a href="/hotel/receptionist/profile"
+                            <a href="/hotel/{{ auth()->user()->role }}/profile"
                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</a>
                         </li>
                         <li>
-                            <a href="/hotel/receptionist/changePassword"
+                            <a href="/hotel/{{ auth()->user()->role }}/changePassword"
                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Password</a>
                         </li>
                         <li>

@@ -13,7 +13,6 @@ class UserController extends Controller
     public function index()
     {
         $receptionists = User::where('role', 'receptionist')->get();
-
         return view('pages.admin.admin.receptionist.index', compact('receptionists'));
     }
 

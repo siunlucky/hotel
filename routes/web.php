@@ -120,7 +120,10 @@ Route::group(['prefix' => 'hotel'], function () {
         Route::delete('/room-types/delete/{room_type:id}', [RoomTypeController::class, 'adminDestroy']);
 
         Route::get('/profile', [ProfileController::class, 'index']);
-        Route::get('/password', [PasswordController::class, 'index']);
+        Route::post('/profile/{user:id}/update', [ProfileController::class, 'update']);
+
+        Route::get('/changePassword', [ChangePasswordController::class, 'index']);
+        Route::post('/changePassword/{user:id}/update', [ChangePasswordController::class, 'update']);
     });
 });
 

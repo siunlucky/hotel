@@ -8,7 +8,7 @@
             <div class="bg-[#AFAFAF] flex rounded-t-md p-5 items-center">
                 <img src="/storage/profilePhoto/{{ auth()->user()->photo }}"
                     class="object-cover object-center rounded-full w-[70px] h-[70px]" alt="">
-                <h4 class="ml-4 text-[20px] font-semibold text-white">Receptionist</h4>
+                <h4 class="ml-4 text-[20px] font-semibold text-white">Admin</h4>
             </div>
             <ul>
                 <li class="flex justify-between px-5 py-2 text-[15px] border border-[#20202020]">
@@ -29,7 +29,7 @@
         <div class="col-span-3 bg-white rounded-md">
             <div class="p-4 card">
                 <h5 class="pb-2 border-b mb-[50px] text-[20px] font-semibold">Change Password</h5>
-                <form action="/hotel/receptionist/changePassword/{{ auth()->user()->id }}/update" method="POST">
+                <form action="/hotel/admin/changePassword/{{ auth()->user()->id }}/update" method="POST">
                     @csrf
                     <input type="hidden">
                     <div class="mb-5 ">
