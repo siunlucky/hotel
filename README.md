@@ -9,7 +9,7 @@ git clone https://github.com/siunlucky/hotel.git
 ```
 ## Install packages
 
-``bash
+```bash
 npm i
 ```
 and
