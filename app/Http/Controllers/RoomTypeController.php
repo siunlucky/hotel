@@ -137,7 +137,8 @@ class RoomTypeController extends Controller
 
             $booking_detail->save();
         }
-        return back();
+
+        return view('pages.check-booking.invoice', compact('booking'));
     }
 
 
@@ -246,8 +247,30 @@ class RoomTypeController extends Controller
         $beds = Bed::all();
         $photos = $room_type->PhotoRoomTypes;
 
+
         return view('pages.admin.admin.manage-hotel.room-types.edit', compact('room_type', 'complements', 'amenities', 'beds', 'photos'));
     }
+
+    public function adminUpdate(RoomType $room_type, Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'person' => 'required',
+            'price' => 'required',
+            'amenities' => 'required',
+            'complements' => 'required',
+            'rooms' => 'required',
+            'beds' => 'required',
+            'photos' => 'nullable',
+            'description' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+    }
+
+
 
 
     public function adminDestroy(RoomType $room_type)

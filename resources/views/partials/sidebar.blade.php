@@ -240,102 +240,7 @@
                                 <span class="ml-3">Book Room</span>
                             </a>
                         </li>
-                        <li>
-                            <button type="button"
-                                class="flex items-center w-full p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group"
-                                aria-controls="dropdown-example" data-collapse-toggle="Manage Hotel">
-                                <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                    <path
-                                        d="M64 144a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM64 464a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48-208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z" />
-                                </svg>
-                                <span class="ml-3 whitespace-nowrap" sidebar-toggle-item>Manage Hotel</span>
-                                <svg sidebar-toggle-item class="w-6 h-6 ml-[50px]" fill="currentColor"
-                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </button>
-                            <ul id="Manage Hotel" class="hidden py-2 space-y-2">
-                                <li>
-                                    <a href="/hotel/admin/amenities"
-                                        class="flex items-center justify-between w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
-                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
-                                        </svg>
-                                        <span class="w-full ml-4 text-[14px]">
-                                            Amenities
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/hotel/admin/complements"
-                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
-                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
-                                        </svg>
-                                        <span class="ml-4 text-[14px]">
-                                            Complements
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/hotel/admin/bed-list"
-                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
-                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
-                                        </svg>
-                                        <span class="ml-4 text-[14px]">
-                                            Beds Types
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/hotel/admin/room-types"
-                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
-                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
-                                        </svg>
-                                        <span class="ml-4 text-[14px]">
-                                            Room Types
-                                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/hotel/admin/rooms"
-                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                                            fill="currentColor"
-                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
-                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
-                                        </svg>
-                                        <span class="ml-4 text-[14px]">
-                                            Room
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <li>
                             <button type="button"
                                 class="flex items-center w-full p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group"
@@ -431,6 +336,100 @@
                                         </svg>
                                         <span class="ml-4 text-[14px]">
                                             All Bookings
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button type="button"
+                                class="flex items-center w-full p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 group"
+                                aria-controls="dropdown-example" data-collapse-toggle="Manage Hotel">
+                                <svg class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M481.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-30.9 28.1c-7.7 7.1-11.4 17.5-10.9 27.9c.1 2.9 .2 5.8 .2 8.8s-.1 5.9-.2 8.8c-.5 10.5 3.1 20.9 10.9 27.9l30.9 28.1c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-39.7-12.6c-10-3.2-20.8-1.1-29.7 4.6c-4.9 3.1-9.9 6.1-15.1 8.7c-9.3 4.8-16.5 13.2-18.8 23.4l-8.9 40.7c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-8.9-40.7c-2.2-10.2-9.5-18.6-18.8-23.4c-5.2-2.7-10.2-5.6-15.1-8.7c-8.8-5.7-19.7-7.8-29.7-4.6L69.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l30.9-28.1c7.7-7.1 11.4-17.5 10.9-27.9c-.1-2.9-.2-5.8-.2-8.8s.1-5.9 .2-8.8c.5-10.5-3.1-20.9-10.9-27.9L8.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l39.7 12.6c10 3.2 20.8 1.1 29.7-4.6c4.9-3.1 9.9-6.1 15.1-8.7c9.3-4.8 16.5-13.2 18.8-23.4l8.9-40.7c2-9.1 9-16.3 18.2-17.8C213.3 1.2 227.5 0 242 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l8.9 40.7c2.2 10.2 9.4 18.6 18.8 23.4c5.2 2.7 10.2 5.6 15.1 8.7c8.8 5.7 19.7 7.7 29.7 4.6l39.7-12.6c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM242 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+                                <span class="ml-3 whitespace-nowrap" sidebar-toggle-item>Manage Hotel</span>
+                                <svg sidebar-toggle-item class="w-6 h-6 ml-[50px]" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+
+                                </svg>
+                            </button>
+                            <ul id="Manage Hotel" class="hidden py-2 space-y-2">
+                                <li>
+                                    <a href="/hotel/admin/amenities"
+                                        class="flex items-center justify-between w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
+                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+                                        </svg>
+
+                                        <span class="w-full ml-4 text-[14px]">
+                                            Amenities
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/hotel/admin/complements"
+                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
+                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+                                        </svg>
+                                        <span class="ml-4 text-[14px]">
+                                            Complements
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/hotel/admin/bed-list"
+                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
+                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+                                        </svg>
+                                        <span class="ml-4 text-[14px]">
+                                            Beds Types
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/hotel/admin/room-types"
+                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
+                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+                                        </svg>
+                                        <span class="ml-4 text-[14px]">
+                                            Room Types
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/hotel/admin/rooms"
+                                        class="flex items-center w-full p-1 pl-5 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                            fill="currentColor"
+                                            class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900">
+                                            <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M160 256C160 202.1 202.1 160 256 160C309 160 352 202.1 352 256C352 309 309 352 256 352C202.1 352 160 309 160 256zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z" />
+                                        </svg>
+                                        <span class="ml-4 text-[14px]">
+                                            Room
                                         </span>
                                     </a>
                                 </li>

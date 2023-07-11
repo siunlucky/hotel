@@ -228,7 +228,7 @@
                                     </ul>
                                 </div>
                                 <img src="/storage/typeRoomPhoto/{{ $room_type->PhotoRoomTypes[0]->photo }}"
-                                    class="min-h-[350px] rounded" alt="">
+                                    class="object-cover object-center w-full h-[350px] rounded" alt="">
                             </div>
                             <div
                                 class="absolute bottom-0 mx-7 left-0 right-0 p-[1.25rem] rounded-md border-[#ab8a625d] border-2 bg-[#F4F2F0] hover:-translate-y-2 duration-500">
