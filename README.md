@@ -4,60 +4,60 @@ Website CRUD Hotel dengan framework Laravel
 
 ## Cloning the repository
 
-``dash
+```bash
 git clone https://github.com/siunlucky/hotel.git
-``
+```
 ## Install packages
 
-``dash
+``bash
 npm i
-``
+```
 and
-``dash
+```bash
 composer install
-``
+```
 
 # Setup .env file
 
-Copy and rename file .env.example to .env and find ``dash DB_DATABASE=laravel `` change it to ``dash DB_DATABASE=hotel``
+Copy and rename file .env.example to .env and find ``DB_DATABASE=laravel`` change to ``DB_DATABASE=hotel``
 
 ## Generate app key
 
-``dash
+```bash
 php artisan key:generate
-``
+```
 
 ## Run Migration
 
-``dash
+```bash
 php artisan migrate
-``
+```
 
-``
+```bash
 php artisan migrate:fresh --seed
-``
+```
 
 ## Start the app
 
-``dash
+```bash
 npm run dev --watch
-``
+```
 and
-``dash
+```bash
 php artisan serve
-``
+```
 
 ## Access the website
 
 Homepage:
-``dash
+```bash
 http://127.0.0.1:8000/hotel
-``
+```
 
 Login Admin
-``dash
+```bash
 http://127.0.0.1:8000/hotel/login
-``
+```
 
 Input the default Id Password for access dashboard admin
 
@@ -71,12 +71,12 @@ password : receptionist
 
 
 Dashboard Admin
-``dash
+```bash
 http://127.0.0.1:8000/hotel/admin/dashboard
-``
+```
 
 Dashboard Receptionist
-``dash
+```bash
 http://127.0.0.1:8000/hotel/receptionist/dashboard
-``
+```
 
